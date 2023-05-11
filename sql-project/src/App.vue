@@ -3,11 +3,16 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <h1 class="main">Hi</h1>
+  <h1 class="header"></h1>
+  <nav>
+    <RouterLink class="link-home" to="/">Home</RouterLink>
+  </nav>
+  <RouterLink class="link-pie" to="/login"></RouterLink>
+  <RouterLink class="link-bar" to="/Sign-Up"></RouterLink>
 </template>
 
 <style>
-.main {
-  background-color: purple;
+.header {
+  color: #f4f1d6;
 }
 </style>
