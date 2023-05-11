@@ -1,0 +1,13 @@
+.mains{
+    background-color: pink;
+}
+
+.app{
+    margin-top: -50px;
+    background-color: purple;
+    height: 100px;
+    width: 2000px;
+    position: absolute;
+    bottom:90%
+    
+}
