@@ -3,28 +3,28 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <div>
+  <div class="head">
     <h1 class="header"></h1>
     <nav>
-      <RouterLink class="link-home" to="/">Home</RouterLink>
+      <RouterLink class="link" to="/">Home</RouterLink>
     </nav>
     <nav>
-      <RouterLink class="link-home" to="/about">About Us</RouterLink>
+      <RouterLink class="link" to="/about">About Us</RouterLink>
     </nav>
     <nav>
-      <RouterLink class="link-home" to="/HousekeepersView">Housekeepers</RouterLink>
+      <RouterLink class="link" to="/HousekeepersView">Housekeepers</RouterLink>
     </nav>
     <nav>
-      <RouterLink class="link-home" to="/GardernersView">Gardeners</RouterLink>
+      <RouterLink class="link" to="/GardernersView">Gardeners</RouterLink>
     </nav>
     <nav>
-      <RouterLink class="link-home" to="/CooksView">Cooks</RouterLink>
+      <RouterLink class="link" to="/CooksView">Cooks</RouterLink>
     </nav>
     <nav>
-      <RouterLink class="link-Login" to="/loginView">Log In</RouterLink>
+      <RouterLink class="link login" to="/loginView">Log In</RouterLink>
     </nav>
     <nav>
-      <RouterLink class="link-SignUp" to="/SignUpView">Sign Up</RouterLink>
+      <RouterLink class="link signup" to="/SignUpView">Sign Up</RouterLink>
     </nav>
   </div>
 </template>
@@ -32,5 +32,14 @@ import { RouterLink, RouterView } from 'vue-router'
 <style>
 .header {
   color: #f4f1d6;
+}
+.head {
+}
+
+.link {
+  display: flex;
+  flex-direction: row;
+  margin: 20px auto;
+  color: white;
 }
 </style>
