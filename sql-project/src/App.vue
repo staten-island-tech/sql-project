@@ -32,6 +32,7 @@ import { RouterLink, RouterView } from 'vue-router'
 <style>
 .header {
   color: #f4f1d6;
+  text-align: center;
 }
 .head {
 }
