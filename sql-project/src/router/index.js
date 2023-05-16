@@ -16,27 +16,27 @@ const router = createRouter({
     },
     {
       path: '/CooksView',
-      name: 'Cooks',
+      name: 'CooksView',
       component: () => import('../views/CooksView.vue')
     },
     {
       path: '/GardenersView',
-      name: 'Gardeners',
+      name: 'GardenersView',
       component: () => import('../views/GardenersView.vue')
     },
     {
       path: '/HousekeepersView',
-      name: 'Housekeepers',
+      name: 'HousekeepersView',
       component: () => import('../views/HousekeepersView.vue')
     },
     {
       path: '/loginView',
-      name: 'Login',
+      name: 'loginView',
       component: () => import('../views/loginView.vue')
     },
     {
       path: '/SignUpView',
-      name: 'SignUp',
+      name: 'SignUpView',
       component: () => import('../views/SignUpView.vue')
     },
   ]
