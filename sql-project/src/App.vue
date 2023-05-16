@@ -20,10 +20,10 @@ import { RouterLink, RouterView } from 'vue-router'
       <RouterLink class="link" to="/CooksView">Cooks</RouterLink>
     </nav>
     <nav>
-      <RouterLink class="link login" to="/loginView">Log In</RouterLink>
+      <RouterLink class="link login user" to="/loginView">Log In</RouterLink>
     </nav>
     <nav>
-      <RouterLink class="link signup" to="/SignUpView">Sign Up</RouterLink>
+      <RouterLink class="link signup user" to="/SignUpView">Sign Up</RouterLink>
     </nav>
   </div>
 </template>
@@ -42,10 +42,28 @@ import { RouterLink, RouterView } from 'vue-router'
 
 .head {
   width: 100%;
+  align-content: center;
   display: flex;
-  flex-direction: row;
-  margin: 10px auto;
-  position: absolute;
-  bottom: 90%;
+  justify-content: space-evenly;
+  margin: 300px;
+  margin-bottom: 200px;
+  margin-top: -32%;
+}
+
+.login {
+  margin-left: 200px;
+}
+
+.signup {
+  margin-right: 200px;
+}
+
+.user {
+  border: black 3px solid;
+  padding: 5px;
+  margin-top: 5%;
+  border-radius: 1px;
+  background-color: #452784;
+  border-radius: 20px;
 }
 </style>

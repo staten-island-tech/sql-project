@@ -3,7 +3,7 @@
 #app {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0 rem;
 
   font-weight: normal;
 }
@@ -17,7 +17,7 @@ a,
 
 @media (hover: hover) {
   a:hover {
-    background-color: hsla(0, 0%, 100%, 0.2);
+    background-color: #966FD6;
   }
 }
 
@@ -28,6 +28,7 @@ a,
   }
 
   #app {
+    display: grid;
     padding: 0 2rem;
   }
 }
