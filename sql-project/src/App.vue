@@ -4,7 +4,6 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <div class="head">
-    <h1 class="header"></h1>
     <nav>
       <RouterLink class="link" to="/">Home</RouterLink>
     </nav>
@@ -31,16 +30,22 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <style>
 .header {
+  margin: 10px auto;
   color: #f4f1d6;
   text-align: center;
 }
-.head {
-}
 
 .link {
-  display: flex;
-  flex-direction: row;
   margin: 20px auto;
   color: white;
+}
+
+.head {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: 10px auto;
+  position: absolute;
+  bottom: 90%;
 }
 </style>
