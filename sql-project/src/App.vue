@@ -14,7 +14,7 @@ import { RouterLink, RouterView } from 'vue-router'
       <RouterLink class="link" to="/HousekeepersView">Housekeepers</RouterLink>
     </nav>
     <nav>
-      <RouterLink class="link" to="/GardernersView">Gardeners</RouterLink>
+      <RouterLink class="link" to="/GardenersView">Gardeners</RouterLink>
     </nav>
     <nav>
       <RouterLink class="link" to="/CooksView">Cooks</RouterLink>
@@ -47,15 +47,15 @@ import { RouterLink, RouterView } from 'vue-router'
   justify-content: space-evenly;
   margin: 300px;
   margin-bottom: 200px;
-  margin-top: -32%;
+  margin-top: -37%;
 }
 
 .login {
-  margin-left: 200px;
+  margin-left: 100px;
 }
 
 .signup {
-  margin-right: 200px;
+  margin-right: 100px;
 }
 
 .user {
