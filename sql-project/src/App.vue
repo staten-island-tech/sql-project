@@ -3,29 +3,31 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <div class="head">
-    <nav>
-      <RouterLink class="link" to="/">Home</RouterLink>
-    </nav>
-    <nav>
-      <RouterLink class="link" to="/about">About Us</RouterLink>
-    </nav>
-    <nav>
-      <RouterLink class="link" to="/HousekeepersView">Housekeepers</RouterLink>
-    </nav>
-    <nav>
-      <RouterLink class="link" to="/GardenersView">Gardeners</RouterLink>
-    </nav>
-    <nav>
-      <RouterLink class="link" to="/CooksView">Cooks</RouterLink>
-    </nav>
-    <nav>
-      <RouterLink class="link login user" to="/loginView">Log In</RouterLink>
-    </nav>
-    <nav>
-      <RouterLink class="link signup user" to="/SignUpView">Sign Up</RouterLink>
-    </nav>
+  <div>
     <RouterView />
+    <div class="head">
+      <nav>
+        <RouterLink class="link" to="/">Home</RouterLink>
+      </nav>
+      <nav>
+        <RouterLink class="link" to="/about">About Us</RouterLink>
+      </nav>
+      <nav>
+        <RouterLink class="link" to="/HousekeepersView">Housekeepers</RouterLink>
+      </nav>
+      <nav>
+        <RouterLink class="link" to="/GardenersView">Gardeners</RouterLink>
+      </nav>
+      <nav>
+        <RouterLink class="link" to="/CooksView">Cooks</RouterLink>
+      </nav>
+      <nav>
+        <RouterLink class="link login user" to="/loginView">Log In</RouterLink>
+      </nav>
+      <nav>
+        <RouterLink class="link signup user" to="/SignUpView">Sign Up</RouterLink>
+      </nav>
+    </div>
   </div>
 </template>
 
@@ -48,7 +50,7 @@ import { RouterLink, RouterView } from 'vue-router'
   justify-content: space-evenly;
   margin: 300px;
   margin-bottom: 200px;
-  margin-top: -32%;
+  margin-top: -428px;
 }
 
 .login {
