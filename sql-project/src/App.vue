@@ -47,7 +47,7 @@ import { RouterLink, RouterView } from 'vue-router'
   justify-content: space-evenly;
   margin: 300px;
   margin-bottom: 200px;
-  margin-top: -37%;
+  margin-top: -35.5%;
 }
 
 .login {
