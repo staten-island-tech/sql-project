@@ -25,6 +25,7 @@ import { RouterLink, RouterView } from 'vue-router'
     <nav>
       <RouterLink class="link signup user" to="/SignUpView">Sign Up</RouterLink>
     </nav>
+    <RouterView />
   </div>
 </template>
 
@@ -47,7 +48,7 @@ import { RouterLink, RouterView } from 'vue-router'
   justify-content: space-evenly;
   margin: 300px;
   margin-bottom: 200px;
-  margin-top: -35.5%;
+  margin-top: -32%;
 }
 
 .login {
