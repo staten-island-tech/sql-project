@@ -30,13 +30,12 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <style>
 .header {
+  margin: 10px auto;
   color: #f4f1d6;
   text-align: center;
 }
 
 .link {
-  display: flex;
-  flex-direction: row;
   margin: 20px auto;
   color: white;
 }
