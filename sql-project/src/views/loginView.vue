@@ -15,4 +15,7 @@
 .loginForm {
   border: black 3px solid;
 }
+
+.head {
+}
 </style>
