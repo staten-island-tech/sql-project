@@ -1,4 +1,16 @@
-<script></script>
+<script>
+import { createApp } from 'vue'
+import { createPinia } from 'pinia'
+import App from './App.vue'
+import { defineStore } from 'pinia'
+
+const pinia = createPinia()
+const app = createApp(App)
+
+app.use(pinia)
+app.mount('#app')
+</script>
+
 <template>
   <form class="loginForm">
     <div class="email">
@@ -14,6 +26,11 @@
 <style>
 .loginForm {
   border: black 3px solid;
+  background-color: black;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  width: 20%;
 }
 
 .head {
