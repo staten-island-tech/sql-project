@@ -14,5 +14,10 @@
 <style>
 .loginForm {
   border: black 3px solid;
+  background-color: black;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  width: 20%x;
 }
 </style>
