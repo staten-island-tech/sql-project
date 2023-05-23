@@ -30,9 +30,6 @@ app.mount('#app')
   padding: 10px;
   border-radius: 10px;
   text-align: center;
-  width: 20%;
-}
-
-.head {
+  width: 20%x;
 }
 </style>
