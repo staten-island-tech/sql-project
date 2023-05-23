@@ -9,6 +9,12 @@ const app = createApp(App)
 
 app.use(pinia)
 app.mount('#app')
+
+router.beforeEach((to) => {
+  const main = useMainStore(pinia)
+
+  if (to.meta.requiresAuth && !main.isLoggedIn) return '/login'
+})
 </script>
 
 <template>
