@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h1>Hey Sisters</h1>
+    <h1>Hey E-Users</h1>
     <h4>
       This is E-House, a platform where you can interact and buy services from certified
       professionals in your community.
