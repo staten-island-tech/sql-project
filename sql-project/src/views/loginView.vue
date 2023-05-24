@@ -1,5 +1,5 @@
 <script>
-import { createApp } from 'vue'
+/* import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import App from './App.vue'
 import { defineStore } from 'pinia'
@@ -14,7 +14,7 @@ router.beforeEach((to) => {
   const main = useMainStore(pinia)
 
   if (to.meta.requiresAuth && !main.isLoggedIn) return '/login'
-})
+}) */
 </script>
 
 <template>
