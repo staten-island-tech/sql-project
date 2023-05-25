@@ -8,7 +8,7 @@
       <input type="text" id="passwordID" placeholder="Enter Password" />
     </div>
     <div>
-      <input type="text" id="confirmpasswordID" placeholder="Confirm Password" />
+      <input type="password" id="confirmpasswordID" placeholder="Confirm Password" />
     </div>
     <button id="loginbtn">Login</button>
   </form>
