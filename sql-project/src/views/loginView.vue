@@ -1,4 +1,12 @@
-<script></script>
+<script>
+<div class="box">
+   <h2 class="name">{{  }}</h2>
+   <img class="image" v-bind:src="img" v-bind:alt="img" />
+   <h3 class="price">Price: ${{ price }}</h3>
+   <h3 class="Habitat">Habitat: {{ Habitat }}</h3>
+   <h3 class="dangerous">Danger Level: {{ dangerous }}</h3>
+   <h3 class="InStock">{{ InStock }}</h3>
+</script>
 
 <template>
   <form class="loginForm">

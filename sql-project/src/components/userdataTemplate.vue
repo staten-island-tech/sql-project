@@ -12,12 +12,12 @@ export default {
   },
 name: 'boxTemplate',
   props: {
-    species: String,
+    name: String,
     img: String,
-    price: Number,
-    Habitat: String,
-    dangerous: String,
-    InStock: String,
+    location: Number,
+    price: String,
+    Available: Boolean,
+    Description: String,
     buttonLabel: String
   },
 </script>
