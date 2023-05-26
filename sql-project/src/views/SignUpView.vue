@@ -5,7 +5,7 @@
       <input type="text" id="emailID" placeholder="Enter Email" />
     </div>
     <div>
-      <input type="text" id="passwordID" placeholder="Enter Password" />
+      <input type="password" id="passwordID" placeholder="Enter Password" />
     </div>
     <div>
       <input type="password" id="confirmpasswordID" placeholder="Confirm Password" />
