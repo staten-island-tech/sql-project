@@ -23,7 +23,4 @@
   text-align: center;
   width: 20%;
 }
-
-.head {
-}
 </style>
