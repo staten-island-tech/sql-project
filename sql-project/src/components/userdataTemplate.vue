@@ -10,7 +10,7 @@ export default {
       })
     }
   },
-name: 'boxTemplate',
+  name: 'boxTemplate',
   props: {
     name: String,
     img: String,
@@ -19,5 +19,6 @@ name: 'boxTemplate',
     Available: Boolean,
     Description: String,
     buttonLabel: String
-  },
+  }
+}
 </script>
