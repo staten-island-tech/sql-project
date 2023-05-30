@@ -1,4 +1,35 @@
-<script></script>
+<script>
+import { createClient } from '@supabase/supabase-js'
+
+const supabaseUrl = 'https://lkfdrqoayqeodntjklhk.supabase.co'
+const supabaseKey = process.env.SUPABASE_KEY
+const supabase = createClient(supabaseUrl, supabaseKey)
+then
+export default {
+  data() {
+    return {
+      users: []
+    }
+  },
+  mounted() {
+    this.fetchUsers()
+  },
+  methods: {
+    async fetchUsers() {
+      let { data, error } = await supabase.auth.signUp({
+        email: 'someone@email.com',
+        password: 'UzhzCQCpATRnMJXrgswS'
+      })
+
+      if (error) {
+        console.error(error)
+      } else {
+        this.users = data
+      }
+    }
+  }
+}
+</script>
 <template>
   <form class="loginForm">
     <div class="email">
@@ -22,5 +53,6 @@
   border-radius: 10px;
   text-align: center;
   width: 20%;
+  height: auto;
 }
 </style>

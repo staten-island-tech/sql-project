@@ -1,4 +1,32 @@
-<script></script>
+<script>
+const supabaseUrl = 'https://lkfdrqoayqeodntjklhk.supabase.co'
+const supabaseKey = process.env.SUPABASE_KEY
+const supabase = createClient(supabaseUrl, supabaseKey)
+then
+export default {
+  data() {
+    return {
+      users: []
+    }
+  },
+  mounted() {
+    this.fetchUsers()
+  },
+  methods: {
+    async fetchUsers() {
+      let { data, error } = await supabase.auth.signInWithPassword({
+        email: '',
+        password: ''
+      })
+      if (error) {
+        console.error(error)
+      } else {
+        this.users = data
+      }
+    }
+  }
+}
+</script>
 
 <template>
   <form class="loginForm">
