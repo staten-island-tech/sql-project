@@ -1,24 +1,27 @@
 <script>
-import { reactive } from 'vue'
-export const monkeyItems = reactive([])
+import { createClient } from '@supabase/supabase-js'
+
+const supabaseUrl = ''
+const supabaseKey = 'YOUR_SUPABASE_PUBLIC_API_KEY'
+const supabase = createClient(supabaseUrl, supabaseKey)
+then
 export default {
   data() {
     return {
-      price: new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD'
-      })
+      users: []
     }
   },
-  name: 'boxTemplate',
-  props: {
-    name: String,
-    img: String,
-    location: Number,
-    price: String,
-    Available: Boolean,
-    Description: String,
-    buttonLabel: String
-  }
-}
+  mounted() {
+    this.fetchUsers()
+  },
+  methods: {
+    async fetchUsers() {
+      const { data, error } = await supabase
+        .from('users')
+        .select('*')
+
+      if (error) {
+        console.error(error)
+      } else {
+        this.users = data
 </script>
