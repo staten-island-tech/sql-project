@@ -1,5 +1,5 @@
 <script>
-const supabaseUrl = 'https://lkfdrqoayqeodntjklhk.supabase.co'
+/* const supabaseUrl = 'https://lkfdrqoayqeodntjklhk.supabase.co'
 const supabaseKey = process.env.SUPABASE_KEY
 const supabase = createClient(supabaseUrl, supabaseKey)
 then
@@ -26,6 +26,11 @@ export default {
     }
   }
 }
+supabase.auth.onAuthStateChange((event) => {
+  if (event == 'SIGNED_IN') {
+    router.push('/dashboard')
+  }
+}) */
 </script>
 
 <template>

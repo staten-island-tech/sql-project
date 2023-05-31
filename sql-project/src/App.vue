@@ -1,5 +1,18 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
+
+import { useUserStore } from '@/stores/user'
+import { createPinia } from 'pinia'
+import { createApp } from 'vue'
+import App from './App.vue'
+
+const userStore = useUserStore()
+
+const pinia = createPinia()
+const app = createApp(App)
+app.use(pinia)
+
+const userStore = useUserStore()
 </script>
 
 <template>
