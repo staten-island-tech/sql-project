@@ -1,8 +1,8 @@
 <script>
 import { createClient } from '@supabase/supabase-js'
 
-const supabaseUrl = ''
-const supabaseKey = 'YOUR_SUPABASE_PUBLIC_API_KEY'
+const supabaseUrl = 'https://lkfdrqoayqeodntjklhk.supabase.co'
+const supabaseKey = process.env.SUPABASE_KEY
 const supabase = createClient(supabaseUrl, supabaseKey)
 then
 export default {
@@ -16,12 +16,14 @@ export default {
   },
   methods: {
     async fetchUsers() {
-      const { data, error } = await supabase
-        .from('users')
-        .select('*')
+      const { data, error } = await supabase.from('users').select('*')
 
       if (error) {
         console.error(error)
       } else {
         this.users = data
+      }
+    }
+  }
+}
 </script>
