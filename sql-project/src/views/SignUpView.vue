@@ -17,8 +17,8 @@ export default {
   methods: {
     async fetchUsers() {
       let { data, error } = await supabase.auth.signUp({
-        email: '',
-        password: ''
+        email: 'someone@email.com',
+        password: 'UzhzCQCpATRnMJXrgswS'
       })
 
       if (error) {
@@ -53,6 +53,6 @@ export default {
   border-radius: 10px;
   text-align: center;
   width: 20%;
-  height: auto; 
+  height: auto;
 }
 </style>
