@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-<<<<<<< HEAD
+
 
 import { createPinia } from 'pinia'
 import { createApp } from 'vue'
@@ -9,8 +9,6 @@ import App from './App.vue'
 const pinia = createPinia()
 const app = createApp(App)
 app.use(pinia)
-=======
->>>>>>> parent of 7d69585 (cummit 28)
 </script>
 
 <template>
