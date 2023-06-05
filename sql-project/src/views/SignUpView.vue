@@ -2,29 +2,45 @@
 import { createClient } from '@supabase/supabase-js'
 
 const supabaseUrl = 'https://lkfdrqoayqeodntjklhk.supabase.co'
-const supabaseKey = process.env.SUPABASE_KEY
+const supabaseKey =
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxrZmRycW9heXFlb2RudGprbGhrIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODM3MjU5NjEsImV4cCI6MTk5OTMwMTk2MX0.Nnia_31--mSH_S4xwIC08lvP956aV3qD-XDNVv_Mhxc'
 const supabase = createClient(supabaseUrl, supabaseKey)
-then
-export default {
-  data() {
-    return {
-      users: []
-    }
-  },
-  mounted() {
-    this.fetchUsers()
-  },
-  methods: {
-    async fetchUsers() {
-      let { data, error } = await supabase.auth.signUp({
-        email: 'someone@email.com',
-        password: 'UzhzCQCpATRnMJXrgswS'
-      })
 
-      if (error) {
-        console.error(error)
-      } else {
-        this.users = data
+async function signUp(supabase, user_email, user_password) {
+  try {
+    await supabase.auth.signUp({
+      email: user_email,
+      password: user_password
+    })
+    await supabase.auth.signInWithPassword({
+      email: user_email,
+      password: user_password
+    })
+
+    let{
+      data:{user}
+    } = await supabase.auth.getUser()
+    console.log(user.id)
+
+    await supabase.from('user_data').insert([{user_id: user.id, email: user_email}])
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+export default {
+  methods: {
+    async signup(a) {
+      a.preventDefault()
+
+      let user_email = document.getElementByID('email').value
+      let user_password = document.getElementByID('password').value
+      let user_passwordconfirmed = document.getElementByID('password-confirm').value
+
+      if (userPassword == userPasswordConfirmed) {
+        console.log(true)
+
+      if (userEmail === '' ||)
       }
     }
   }
