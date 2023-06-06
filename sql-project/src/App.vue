@@ -27,6 +27,9 @@ import { RouterLink, RouterView } from 'vue-router'
       <nav>
         <RouterLink class="link signup user" to="/SignUpView">Sign Up</RouterLink>
       </nav>
+      <nav>
+        <RouterLink class="link cart user" to="/cartView">🛒</RouterLink>
+      </nav>
     </div>
   </div>
 </template>

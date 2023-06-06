@@ -17,30 +17,35 @@ async function signUp(supabase, user_email, user_password) {
       password: user_password
     })
 
-    let{
-      data:{user}
+    let {
+      data: { user }
     } = await supabase.auth.getUser()
     console.log(user.id)
 
-    await supabase.from('user_data').insert([{user_id: user.id, email: user_email}])
-    } catch (error) {
-      console.error(error)
-    }
+    await supabase.from('user_data').insert([{ user_id: user.id, email: user_email }])
+  } catch (error) {
+    console.error(error)
   }
+}
 
 export default {
   methods: {
     async signup(a) {
       a.preventDefault()
 
-      let user_email = document.getElementByID('email').value
-      let user_password = document.getElementByID('password').value
-      let user_passwordconfirmed = document.getElementByID('password-confirm').value
+      let user_email = document.getElementByID('emailID').value
+      let user_password = document.getElementByID('passwordID').value
+      let user_passwordconfirmed = document.getElementByID('confirmpasswordID').value
 
       if (userPassword == userPasswordConfirmed) {
         console.log(true)
 
-      if (userEmail === '' ||)
+        if (userEmail === '' || userPassword === '') {
+        } else {
+          signUp(supabase, user_email, user_passwordconfirmed)
+          useAuthStore()
+          router.push(`loginView`)
+        }
       }
     }
   }
