@@ -1,5 +1,7 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+<script>
+import router from './router'
+import { RouterLink, RouterView, routerKey } from 'vue-router'
+import { authStorec } from 'auth'
 </script>
 
 <template>

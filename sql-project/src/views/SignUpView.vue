@@ -20,7 +20,6 @@ async function signUp(supabase, user_email, user_password) {
     let {
       data: { user }
     } = await supabase.auth.getUser()
-    console.log(user.id)
 
     await supabase.from('user_data').insert([{ user_id: user.id, email: user_email }])
   } catch (error) {
@@ -30,8 +29,8 @@ async function signUp(supabase, user_email, user_password) {
 
 export default {
   methods: {
-    async signup(a) {
-      a.preventDefault()
+    async signUp(e) {
+      e.preventDefault()
 
       let user_email = document.getElementByID('emailID').value
       let user_password = document.getElementByID('passwordID').value
