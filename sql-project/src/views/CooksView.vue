@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <script>
 import boxTemplate from '../components/boxTemplate.vue'
 import supabase from '../supabase.js'
@@ -20,3 +21,8 @@ const { data, error } = await supabase.from('cook').select('c')
     />
   </div>
 </template>
+=======
+<script></script>
+<template></template>
+<script></script>
+>>>>>>> parent of 413aa6e (cummit 4003q0441)
