@@ -19,28 +19,29 @@ async function signUp(supabase, user_email, user_password) {
       password: user_password
     })
 
-    let {
-      data: { user }
+    let{
+      data:{user}
     } = await supabase.auth.getUser()
 
-    await supabase.from('user_data').insert([{ user_id: user.id, email: user_email }])
-  } catch (error) {
-    console.error(error)
+    await supabase.from('user_data').insert([{user_id: user.id, email: user_email}])
+    } catch (error) {
+      console.error(error)
+    }
   }
-}
 
 export default {
   methods: {
     async signUp(e) {
       e.preventDefault()
 
-      let user_email = document.getElementByID('emailID').value
-      let user_password = document.getElementByID('passwordID').value
-      let user_passwordconfirmed = document.getElementByID('confirmpasswordID').value
+      let user_email = document.getElementByID('email').value
+      let user_password = document.getElementByID('password').value
+      let user_passwordconfirmed = document.getElementByID('password-confirm').value
 
       if (userPassword == userPasswordConfirmed) {
         console.log(true)
 
+<<<<<<< HEAD
         if (userEmail === '' || userPassword === '') {
         } else {
           const { error } = await supabase
@@ -50,6 +51,9 @@ export default {
           AuthStore()
           router.push(`loginView`)
         }
+=======
+      if (userEmail === '' ||)
+>>>>>>> parent of 67e10e5 (FCSCScCxczCXXVBDFHBDB)
       }
     }
   }
