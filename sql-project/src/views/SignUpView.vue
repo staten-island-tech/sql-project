@@ -42,6 +42,7 @@ export default {
         console.log(true)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (userEmail === '' || userPassword === '') {
         } else {
           const { error } = await supabase
@@ -51,6 +52,9 @@ export default {
           AuthStore()
           router.push(`loginView`)
         }
+=======
+      if (userEmail === '' ||)
+>>>>>>> parent of 67e10e5 (FCSCScCxczCXXVBDFHBDB)
 =======
       if (userEmail === '' ||)
 >>>>>>> parent of 67e10e5 (FCSCScCxczCXXVBDFHBDB)
