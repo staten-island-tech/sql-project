@@ -37,14 +37,15 @@ export default {
       let user_password = document.getElementByID('passwordID').value
       let user_passwordconfirmed = document.getElementByID('confirmpasswordID').value
 
-      if (userPassword == userPasswordConfirmed) {
+      if (user_password == user_passwordconfirmed) {
         console.log(true)
 
         if (userEmail === '' || userPassword === '') {
         } else {
-          signUp(supabase, user_email, user_passwordconfirmed)
-          useAuthStore()
-          router.push(`loginView`)
+          const { user, session, error } = await supabase.auth.signUp({
+            .from('user_data')
+            .insert({ user_email: user_email, user_password: user_password })
+        })
         }
       }
     }
