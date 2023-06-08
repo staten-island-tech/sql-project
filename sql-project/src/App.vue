@@ -1,7 +1,15 @@
 <script>
-import router from './router'
+/* import router from './router' */
 import { RouterLink, RouterView, routerKey } from 'vue-router'
-import { authStorec } from 'auth'
+/* import { authStore } from './stores/auth'
+export default {
+  methods: {
+    logOut: function () {
+      AuthStore().clearUser()
+      router.push('loginView')
+    }
+  }
+} */
 </script>
 
 <template>
@@ -33,6 +41,7 @@ import { authStorec } from 'auth'
         <RouterLink class="link cart user" to="/cartView">🛒</RouterLink>
       </nav>
     </div>
+    <button @click="logOut">Log Out</button>
   </div>
 </template>
 
