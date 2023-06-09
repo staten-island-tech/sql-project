@@ -18,24 +18,27 @@ export default {
     async signup(event) {
       event.preventDefault()
 
-      if (this.userPassword === this.userPasswordConfirmed) {
+      const user_email = this.userEmail
+      const user_password = this.userPassword
+      const user_passwordConfirmed = this.userPasswordConfirmed
+      const message = document.getElementById('msg')
+
+      if (user_password === user_passwordConfirmed) {
         console.log(true)
 
-        if (this.userEmail === '' || this.userPassword === '') {
+        if (user_email === '' || user_password === '') {
+          message.insertAdjacentHTML('afterbegin', `<h3> Please input Email and/or Password </h3>`)
         } else {
           try {
             const { user, error } = await supabase.auth.signUp({
-              email: this.userEmail,
-              password: this.userPassword
+              email: user_email,
+              password: user_password
             })
 
             if (error) {
               console.error(error)
             } else {
-              const { error } = await supabase.auth.signInWithEmail(
-                this.userEmail,
-                this.userPassword
-              )
+              const { error } = await supabase.auth.signInWithPassword(user_email, user_password)
 
               if (error) {
                 console.error(error)
@@ -43,15 +46,20 @@ export default {
                 console.log(user.id)
                 await supabase
                   .from('user_data')
-                  .insert([{ user_id: user.id, email: this.userEmail }])
+                  .insert([{ user_id: user.id, email: user_email, password: user_password }])
               }
             }
+            message.insertAdjacentHTML(
+              'afterbegin',
+              `<h3> Successfully made an account. Now LogIn </h3>`
+            )
           } catch (error) {
             console.error(error)
           }
         }
       } else {
         console.log('Passwords do not match.')
+        message.insertAdjacentHTML('afterbegin', `<h3> Passwords do not match </h3>`)
       }
     }
   }
@@ -70,6 +78,10 @@ export default {
       <input type="password" v-model="userPasswordConfirmed" placeholder="Confirm Password" />
     </div>
     <button id="signupbtn" @click="signup">Sign Up</button>
+    <span
+      >Already have an account? <a><RouterLink to="/loginView">Login</RouterLink></a></span
+    >
+    <h3 class="message" id="msg"></h3>
   </form>
 </template>
 
@@ -82,5 +94,9 @@ export default {
   text-align: center;
   width: 20%;
   height: auto;
+}
+
+.message {
+  color: white;
 }
 </style>
