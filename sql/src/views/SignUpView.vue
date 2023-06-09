@@ -6,43 +6,54 @@ const supabaseKey =
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxrZmRycW9heXFlb2RudGprbGhrIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODM3MjU5NjEsImV4cCI6MTk5OTMwMTk2MX0.Nnia_31--mSH_S4xwIC08lvP956aV3qD-XDNVv_Mhxc'
 const supabase = createClient(supabaseUrl, supabaseKey)
 
-async function signup(event) {
-  event.preventDefault()
+export default {
+  data() {
+    return {
+      userEmail: '',
+      userPassword: '',
+      userPasswordConfirmed: ''
+    }
+  },
+  methods: {
+    async signup(event) {
+      event.preventDefault()
 
-  let user_email = document.getElementById('emailID').value
-  let user_password = document.getElementById('passwordID').value
-  let user_passwordconfirmed = document.getElementById('confirmpasswordID').value
+      if (this.userPassword === this.userPasswordConfirmed) {
+        console.log(true)
 
-  if (user_password === user_passwordconfirmed) {
-    console.log(true)
-
-    if (user_email === '' || user_password === '') {
-      console.log('Please enter email and password.')
-    } else {
-      try {
-        const { user, error } = await supabase.auth.signUp({
-          email: user_email,
-          password: user_password
-        })
-
-        if (error) {
-          console.error(error)
+        if (this.userEmail === '' || this.userPassword === '') {
         } else {
-          const { error } = await supabase.auth.signInWithEmail(user_email, user_password)
+          try {
+            const { user, error } = await supabase.auth.signUp({
+              email: this.userEmail,
+              password: this.userPassword
+            })
 
-          if (error) {
+            if (error) {
+              console.error(error)
+            } else {
+              const { error } = await supabase.auth.signInWithEmail(
+                this.userEmail,
+                this.userPassword
+              )
+
+              if (error) {
+                console.error(error)
+              } else {
+                console.log(user.id)
+                await supabase
+                  .from('user_data')
+                  .insert([{ user_id: user.id, email: this.userEmail }])
+              }
+            }
+          } catch (error) {
             console.error(error)
-          } else {
-            console.log(user.id)
-            await supabase.from('user_data').insert([{ user_id: user.id, email: user_email }])
           }
         }
-      } catch (error) {
-        console.error(error)
+      } else {
+        console.log('Passwords do not match.')
       }
     }
-  } else {
-    console.log('Passwords do not match.')
   }
 }
 </script>
@@ -50,13 +61,13 @@ async function signup(event) {
 <template>
   <form class="loginForm">
     <div class="email">
-      <input type="text" id="emailID" placeholder="Enter Email" />
+      <input type="text" v-model="userEmail" placeholder="Enter Email" />
     </div>
     <div>
-      <input type="password" id="passwordID" placeholder="Enter Password" />
+      <input type="password" v-model="userPassword" placeholder="Enter Password" />
     </div>
     <div>
-      <input type="password" id="confirmpasswordID" placeholder="Confirm Password" />
+      <input type="password" v-model="userPasswordConfirmed" placeholder="Confirm Password" />
     </div>
     <button id="signupbtn" @click="signup">Sign Up</button>
   </form>
