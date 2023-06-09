@@ -1,15 +1,5 @@
 <script>
-import { reactive } from 'vue'
-export const service = reactive([])
 export default {
-  data() {
-    return {
-      price: new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD'
-      })
-    }
-  },
   name: 'boxTemplate',
   props: {
     name: String,
@@ -19,11 +9,10 @@ export default {
     Available: String,
     description: String,
     buttonLabel: String
-  }
+  },
   methods: {
     addToShoppingCart(object) {
-      service.push(object)
-      console.log(service)
+      console.log(object)
     }
   }
 }
@@ -32,17 +21,17 @@ export default {
 <template>
   <div class="box">
     <h2 class="name">{{ name }}</h2>
-    <img class="image" v-bind:src="img" v-bind:alt="img" />
+    <img class="image" :src="img" :alt="img" />
     <h3 class="Location">Location: {{ Location }}</h3>
     <h3 class="price">Price: ${{ price }}</h3>
     <h3 class="Available">Available {{ Available }}</h3>
     <h3 class="description">{{ description }}</h3>
     <button
-      @click.self="
+      @click="
         addToShoppingCart({
-          name: species,
+          name,
           image: img,
-          price: price,
+          price,
           count: 1
         })
       "
@@ -52,3 +41,7 @@ export default {
     </button>
   </div>
 </template>
+
+<style>
+/* Add your styles here */
+</style>

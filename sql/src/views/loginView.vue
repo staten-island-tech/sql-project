@@ -21,6 +21,24 @@ const supabaseKey =
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxrZmRycW9heXFlb2RudGprbGhrIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODM3MjU5NjEsImV4cCI6MTk5OTMwMTk2MX0.Nnia_31--mSH_S4xwIC08lvP956aV3qD-XDNVv_Mhxc'
 const supabase = createClient(supabaseUrl, supabaseKey)
 
+async function signIn(supabase, user_email, user_password) {
+  try {
+    await supabase.auth.signInWithPassword({
+      email: userEmail,
+      password: userPassword
+    })
+
+    let {
+      data: { user }
+    } = await supabase.auth.getUser()
+    useAuthStore().loadUser(user.id)
+    router.push('requestlog')
+  } catch (error) {
+    this.errormessage = 'Couldnt log you in, please check your credentials or try again later.'
+    console.error(error)
+  }
+}
+
 export default {
   data() {
     return {
@@ -40,19 +58,16 @@ export default {
         message.innerHTML = '<h3>Please enter your Email and Password.</h3>'
       } else {
         try {
-          const { user, error } = await supabase.auth.signIn({
+          /*  const { user, error } = await supabase.auth.signIn({
             email: user_email,
             password: user_password
           })
-
+ */ signIn(supabase, userEmail, userPassword)
           if (error) {
             console.error(error)
             message.innerHTML = '<h3>Invalid Email or Password.</h3>'
           } else {
             console.log(user.id)
-            // Handle successful login
-            // Redirect to the desired page
-            // router.push('requestlog')
           }
         } catch (error) {
           console.error(error)
