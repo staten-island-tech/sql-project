@@ -24,17 +24,21 @@ const supabase = createClient(supabaseUrl, supabaseKey)
 async function signIn(supabase, user_email, user_password) {
   try {
     await supabase.auth.signInWithPassword({
-      email: userEmail,
-      password: userPassword
+      email: user_email,
+      password: user_password
     })
 
-    let {
+    /*  let {
       data: { user }
     } = await supabase.auth.getUser()
     useAuthStore().loadUser(user.id)
-    router.push('requestlog')
+    router.push('requestlog') */
   } catch (error) {
     this.errormessage = 'Couldnt log you in, please check your credentials or try again later.'
+    message.insertAdjacentHTML(
+      'afterbegin',
+      `<h3> Couldnt log you in, please check your credentials or try again later.</h3>`
+    )
     console.error(error)
   }
 }
@@ -58,17 +62,7 @@ export default {
         message.innerHTML = '<h3>Please enter your Email and Password.</h3>'
       } else {
         try {
-          /*  const { user, error } = await supabase.auth.signIn({
-            email: user_email,
-            password: user_password
-          })
- */ signIn(supabase, userEmail, userPassword)
-          if (error) {
-            console.error(error)
-            message.innerHTML = '<h3>Invalid Email or Password.</h3>'
-          } else {
-            console.log(user.id)
-          }
+          signIn(supabase, user_email, user_password)
         } catch (error) {
           console.error(error)
           message.innerHTML = '<h3>An error occurred. Please try again later.</h3>'
