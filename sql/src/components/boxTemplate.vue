@@ -23,9 +23,9 @@ export default {
     <h2 class="name">{{ name }}</h2>
     <img class="image" :src="img" :alt="img" />
     <h3 class="Location">Location: {{ Location }}</h3>
-    <h3 class="price">Price: ${{ price }}</h3>
-    <h3 class="Available">Available {{ Available }}</h3>
-    <h3 class="description">{{ description }}</h3>
+    <h3 class="price">Price ($ per hour): ${{ price }}</h3>
+    <h3 class="Available">Available: {{ Available }}</h3>
+    <h3 class="description">Description: {{ description }}</h3>
     <button
       @click="
         addToShoppingCart({
