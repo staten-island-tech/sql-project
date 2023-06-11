@@ -44,10 +44,10 @@ export default {
               if (error) {
                 console.error(error)
               } else {
-                console.log(user.id)
+                console.log(user_email, user_password)
                 await supabase
                   .from('user_data')
-                  .insert([{ user_id: user.id, email: user_email, password: user_password }])
+                  .insert([{ email: user_email, password: user_password }])
               }
             }
             message.insertAdjacentHTML(
