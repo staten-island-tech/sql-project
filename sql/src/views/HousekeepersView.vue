@@ -25,12 +25,17 @@ export default {
   },
   components: {
     boxTemplate
+  },
+  methods:{
+  mounted(){
+    created()
+  }
   }
 }
 </script>
 
 <template>
-  <div class="Cook-Box">
+  <div class="House-Box">
     <boxTemplate
       v-for="item in services"
       :key="item.id"
