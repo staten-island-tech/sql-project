@@ -1,4 +1,5 @@
 <script>
+import { RouterLink, RouterView } from 'vue-router'
 import boxTemplate from '../components/boxTemplate.vue'
 import { createClient } from '@supabase/supabase-js'
 

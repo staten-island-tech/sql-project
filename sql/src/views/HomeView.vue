@@ -1,5 +1,5 @@
 <template>
-  <form class="loginForm">
+  <!--  <form class="loginForm">
     <div class="email">
       <input type="text" v-model="userEmail" placeholder="Enter Email" />
     </div>
@@ -9,7 +9,7 @@
     <button id="loginbtn" @click="login">Login</button>
     <span>Don't have an account? <router-link to="/signupView">Sign Up</router-link></span>
     <h3 class="message" id="msg"></h3>
-  </form>
+  </form> -->
 </template>
 
 <script>
@@ -92,5 +92,62 @@ export default {
 
 .message {
   color: white;
+}
+
+.web-heading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #301934;
+  padding: 30px;
+}
+
+.web-title {
+  border-right: white 4px solid;
+  padding: 30px;
+  background-color: pink;
+  color: #5c1ad9;
+}
+
+.link {
+  border: black 3px solid;
+  padding: 5px;
+  margin-top: 5%;
+  border-radius: 1px;
+  background-color: #5c1ad9;
+  border-radius: 20px;
+  color: white;
+  font-size: 18px;
+  margin: 50px;
+}
+
+.links {
+  border-right: black 3px solid;
+}
+
+.links-div {
+  width: 100%;
+  align-content: center;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.login {
+  margin-left: 100px;
+}
+
+.signup {
+  margin-right: 100px;
+}
+
+.user {
+  border: black 3px solid;
+  padding: 5px;
+  margin-top: 5%;
+  border-radius: 1px;
+  background-color: #452784;
+  border-radius: 20px;
+  color: violet;
 }
 </style>

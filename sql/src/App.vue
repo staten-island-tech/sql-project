@@ -3,23 +3,26 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <div>
+  <div class="web-heading">
     <RouterView />
-    <div class="head">
+    <div class="links-div">
+      <div class="title">
+        <h1 class="web-title">E-House</h1>
+      </div>
       <nav>
-        <RouterLink class="link" to="/">Home</RouterLink>
+        <RouterLink class="link links" to="/">Home</RouterLink>
       </nav>
       <nav>
-        <RouterLink class="link" to="/about">About Us</RouterLink>
+        <RouterLink class="link links" to="/about">About Us</RouterLink>
       </nav>
       <nav>
-        <RouterLink class="link" to="/HousekeepersView">Housekeepers</RouterLink>
+        <RouterLink class="link links" to="/HousekeepersView">Housekeepers</RouterLink>
       </nav>
       <nav>
-        <RouterLink class="link" to="/GardenersView">Gardeners</RouterLink>
+        <RouterLink class="link links" to="/GardenersView">Gardeners</RouterLink>
       </nav>
       <nav>
-        <RouterLink class="link" to="/CooksView">Cooks</RouterLink>
+        <RouterLink class="link links" to="/CooksView">Cooks</RouterLink>
       </nav>
       <nav>
         <RouterLink class="link login user" to="/loginView">Log In</RouterLink>
@@ -31,30 +34,56 @@ import { RouterLink, RouterView } from 'vue-router'
         <RouterLink class="link cart user" to="/cartView">🛒</RouterLink>
       </nav>
     </div>
+    <nav>
+      <div class="logout">
+        <button v-if="loggedin" @click="logOut">Log Out</button>
+      </div>
+    </nav>
   </div>
 </template>
 
 <style>
-.header {
-  margin: 10px auto;
-  color: #f4f1d6;
-  text-align: center;
+.web-heading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #301934;
+  padding: 30px;
+}
+
+.title {
+  color: #5c1ad9;
+}
+.web-title {
+  border-right: white 4px solid;
+  padding: 30px;
+  background-color: pink;
+  color: #5c1ad9;
+  font-weight: bold;
 }
 
 .link {
-  margin: 20px auto;
+  border: black 3px solid;
+  padding: 5px;
+  margin-top: 5%;
+  border-radius: 1px;
+  background-color: #5c1ad9;
+  border-radius: 20px;
   color: white;
-  background-color: #452784;
+  font-size: 18px;
+  margin: 50px;
 }
 
-.head {
+.links {
+  border-right: black 3px solid;
+}
+
+.links-div {
   width: 100%;
   align-content: center;
   display: flex;
   justify-content: space-evenly;
-  margin: 300px;
-  margin-bottom: 200px;
-  margin-top: -428px;
 }
 
 .login {
@@ -72,5 +101,6 @@ import { RouterLink, RouterView } from 'vue-router'
   border-radius: 1px;
   background-color: #452784;
   border-radius: 20px;
+  color: violet;
 }
 </style>

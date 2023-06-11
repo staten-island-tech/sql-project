@@ -1,4 +1,5 @@
 <script>
+import { RouterLink, RouterView } from 'vue-router'
 import { createClient } from '@supabase/supabase-js'
 
 const supabaseUrl = 'https://lkfdrqoayqeodntjklhk.supabase.co'
@@ -51,7 +52,7 @@ export default {
             }
             message.insertAdjacentHTML(
               'afterbegin',
-              `<h3> Successfully made an account. Now LogIn </h3>`
+              `<h3> Successfully made account. Account is now signined </h3>`
             )
           } catch (error) {
             console.error(error)
@@ -67,36 +68,78 @@ export default {
 </script>
 
 <template>
-  <form class="loginForm">
-    <div class="email">
-      <input type="text" v-model="userEmail" placeholder="Enter Email" />
-    </div>
-    <div>
-      <input type="password" v-model="userPassword" placeholder="Enter Password" />
-    </div>
-    <div>
-      <input type="password" v-model="userPasswordConfirmed" placeholder="Confirm Password" />
-    </div>
-    <button id="signupbtn" @click="signup">Sign Up</button>
-    <span
-      >Already have an account? <a><RouterLink to="/loginView">Login</RouterLink></a></span
-    >
-    <h3 class="message" id="msg"></h3>
-  </form>
+  <div>
+    <router-view />
+  </div>
+  <div class="signup-container">
+    <form class="signupForm">
+      <div class="email-div">
+        <input class="email" type="text" v-model="userEmail" placeholder="Enter Email" />
+      </div>
+      <div class="password-div">
+        <input
+          class="password"
+          type="password"
+          v-model="userPassword"
+          placeholder="Enter Password"
+        />
+      </div>
+      <div class="password-div">
+        <input
+          class="password"
+          type="password"
+          v-model="userPasswordConfirmed"
+          placeholder="Confirm Password"
+        />
+      </div>
+      <button class="signup-button" id="signupbtn" @click="signup">Sign Up</button>
+      <span class="redirect"
+        >Already have an account? <a><RouterLink to="/loginView">Login</RouterLink></a></span
+      >
+      <h3 class="message" id="msg"></h3>
+    </form>
+  </div>
 </template>
 
 <style>
-.loginForm {
+.password {
+  font-size: 20px;
+  margin: 10px;
+  border: #5c1ad9 solid 2px;
+}
+
+.email {
+  font-size: 20px;
+  margin: 10px;
+  border: #5c1ad9 solid 2px;
+}
+.signupForm {
   border: black 3px solid;
   background-color: black;
   padding: 10px;
   border-radius: 10px;
   text-align: center;
-  width: 20%;
   height: auto;
+  position: absolute;
+  margin-top: 600px;
+}
+
+.signup-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
 }
 
 .message {
+  color: red;
+}
+
+.signup-button {
+  border-radius: 20%;
+  background-color: #5c1ad9;
+  margin: 20px;
+  font-size: 15px;
   color: white;
 }
 </style>
