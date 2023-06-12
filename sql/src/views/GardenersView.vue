@@ -51,9 +51,9 @@ export default {
       :key="item.id"
       :name="item.name"
       :img="item.img"
-      :Location="item.Location"
+      :location="item.location"
       :price="item.price"
-      :Available="item.Available"
+      :available="item.available"
       :description="item.description_of_user"
       buttonLabel="Add To Cart"
     />

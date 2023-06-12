@@ -13,7 +13,7 @@ export default {
   },
   methods: {
     removefromcart(object) {
-      let objects = cart.find((object) => object.name === object.name)
+      let objects = cart.find((cart) => cart.name === object.name)
       cart.splice(objects, 1)
       console.log(cart)
     }
