@@ -49,6 +49,7 @@ export default {
       } else {
         try {
           signIn(supabase, user_email, user_password)
+          message.innerHTML = '<h3>Successful Login</h3>'
         } catch (error) {
           console.error(error)
           message.innerHTML = '<h3>An error occurred. Please try again later.</h3>'
