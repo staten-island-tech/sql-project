@@ -3,10 +3,10 @@ export default {
   name: 'boxTemplate',
   props: {
     name: String,
-    img: String,
-    Location: String,
+    image: String,
+    location: String,
     price: Number,
-    Available: String,
+    available: String,
     description: String,
     buttonLabel: String
   },
