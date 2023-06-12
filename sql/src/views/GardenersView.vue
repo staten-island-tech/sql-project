@@ -1,7 +1,8 @@
 <script>
 import { createClient } from '@supabase/supabase-js'
-import gardenerBoxTemplate from '../components/gardenerBoxTemplate.vue'
-export default {
+import { gardener } from '../gardenerarray'
+import boxTemplate from '../components/boxTemplate.vue'
+/* export default {
   components: {
     gardenerBoxTemplate
   },
@@ -29,20 +30,30 @@ export default {
       console.error(error)
     }
   }
+} */
+export default {
+  components: {
+    boxTemplate
+  },
+  data() {
+    return {
+      gardener
+    }
+  }
 }
 </script>
 
 <template>
   <div class="Gardener-Box">
-    <gardenerBoxTemplate
-      v-for="service in services"
-      :key="service.id"
-      :name="service.name"
-      :img="service.img"
-      :Location="service.Location"
-      :price="service.price"
-      :Available="service.Available"
-      :description="service.description_of_user"
+    <boxTemplate
+      v-for="item in gardener"
+      :key="item.id"
+      :name="item.name"
+      :img="item.img"
+      :Location="item.Location"
+      :price="item.price"
+      :Available="item.Available"
+      :description="item.description_of_user"
       buttonLabel="Add To Cart"
     />
   </div>

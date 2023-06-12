@@ -3,7 +3,6 @@ import { RouterLink, RouterView } from 'vue-router'
 import boxTemplate from '../components/boxTemplate.vue'
 import { createClient } from '@supabase/supabase-js'
 import { cooks } from '../cookarray'
-import cookarray from "../components/cookarray.vue"
 
 export default {
   /* async created() {
@@ -37,50 +36,55 @@ export default {
 </script>
 
 <template>
+  <div>
+    <router-view />
+  </div>
   <div class="Cook-Box">
     <boxTemplate
-      v-for="cook in Cooks"
-      :key="cook"
-      :image="cook.image"
-      :location="cook.location"
-      :price="cook.price"
-      :available="cook.available"
-      :description="cook.description"
+      class="Cook-Template"
+      v-for="item in cooks"
+      :key="item.id"
+      :name="item.name"
+      :img="item.img"
+      :location="item.location"
+      :price="item.price"
+      :available="item.available"
+      :description="item.description_of_user"
       buttonLabel="Add To Cart"
     />
   </div>
 </template>
 
 <style>
-.cook-box {
-  border: 4px solid black;
-  border-radius: 10%;
-  width: 30vw;
-  height: 90vh;
-  margin: 20px auto;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
+.Cook-Box {
+}
+.Cook-Template {
+  border: black solid 3px;
+  margin: 20px;
+  border-radius: 5%;
+  width: 40vw;
 }
 
-.name {
-  text-align: center;
-  font-size: 3rem;
-  font-weight: bold;
-}
 .image {
-  width: 25vw;
-  height: 40vh;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  flex: 200px;
   justify-content: center;
-  margin: 10px auto;
-  text-align: center;
 }
-.price {
+
+.Available {
+  display: flex;
+  justify-content: center;
   text-align: center;
 }
 
-.Location {
+.description {
+  display: flex;
+  justify-content: center;
   text-align: center;
+}
+
+.cart-button {
 }
 </style>

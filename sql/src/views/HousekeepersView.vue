@@ -2,8 +2,9 @@
 import { RouterLink, RouterView } from 'vue-router'
 import boxTemplate from '../components/boxTemplate.vue'
 import { createClient } from '@supabase/supabase-js'
+import { housekeeper } from '../housekeeperarray'
 
-export default {
+/* export default {
   async created() {
     // Create a single supabase client for interacting with your database
     const supabase = createClient(
@@ -18,19 +19,28 @@ export default {
       this.services = data
     }
   }
+} */
+export default {
+  components: {
+    boxTemplate
+  },
+  data() {
+    return {
+      housekeeper
+    }
+  }
 }
 </script>
 
 <template>
   <div class="House-Box">
     <boxTemplate
-      v-for="item in services"
+      v-for="item in housekeeper"
       :key="item.id"
-      :name="item.name"
       :img="item.img"
-      :Location="item.Location"
+      :location="item.location"
       :price="item.price"
-      :Available="item.Available"
+      :available="item.available"
       :description="item.description_of_user"
       buttonLabel="Add To Cart"
     />
