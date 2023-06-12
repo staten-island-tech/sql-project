@@ -37,7 +37,7 @@ export default {
 
 <template>
   <div>
-    <router-view />
+    <router-view/>
   </div>
   <div class="Cook-Box">
     <boxTemplate
