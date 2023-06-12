@@ -1,6 +1,7 @@
 <script>
 import boxTemplate from '../components/boxTemplate.vue'
 import { createClient } from '@supabase/supabase-js'
+import cookarray from "../components/cookarray.vue"
 
 export default {
   async created() {
@@ -31,14 +32,13 @@ export default {
 <template>
   <div class="Cook-Box">
     <boxTemplate
-      v-for="item in services"
-      :key="item.id"
-      :name="item.name"
-      :img="item.img"
-      :Location="item.Location"
-      :price="item.price"
-      :Available="item.Available"
-      :description="item.description_of_user"
+      v-for="cook in Cooks"
+      :key="cook"
+      :image="cook.image"
+      :location="cook.location"
+      :price="cook.price"
+      :available="cook.available"
+      :description="cook.description"
       buttonLabel="Add To Cart"
     />
   </div>
