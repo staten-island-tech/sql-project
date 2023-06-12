@@ -2,21 +2,34 @@
 import { RouterLink, RouterView } from 'vue-router'
 import cartTemplate from '../components/cartTemplate.vue'
 import { cart } from '../components/boxTemplate.vue'
+
+export default {
+  components: {
+    cartTemplate
+  },
+  data() {
+    return {
+      cart
+    }
+  }
+}
 </script>
 
 <template>
-  <h3 class="cart-header">Your Cart</h3>
+  <div class="cart-heading">
+    <h3 class="cart-header">Your Cart</h3>
+  </div>
   <div class="Cart-Box">
     <cartTemplate
       class="Cart-Template"
       v-for="item in cart"
-      :key="cart.id"
-      :name="cart.name"
-      :img="cart.img"
-      :Location="cart.Location"
-      :price="cart.price"
-      :Available="cart.Available"
-      :description="cart.description_of_user"
+      :key="item.id"
+      :name="item.name"
+      :img="item.img"
+      :Location="item.Location"
+      :price="item.price"
+      :Available="item.Available"
+      :description="item.description_of_user"
       buttonLabel="Remove from Cart"
     />
   </div>
@@ -45,5 +58,20 @@ import { cart } from '../components/boxTemplate.vue'
   align-items: center;
   text-align: center;
   flex-wrap: 200px;
+}
+
+.cart-heading {
+  text-align: center;
+  height: auto;
+  position: absolute;
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: #5c1ad9;
+  border: black solid 4px;
+  background-color: white;
+  width: 20vw;
 }
 </style>
