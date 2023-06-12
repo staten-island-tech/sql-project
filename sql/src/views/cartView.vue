@@ -6,7 +6,6 @@ import { cart } from '../components/boxTemplate.vue'
 
 <template>
   <h3 class="cart-header">Your Cart</h3>
-
   <div class="Cart-Box">
     <cartTemplate
       class="Cart-Template"
@@ -23,4 +22,28 @@ import { cart } from '../components/boxTemplate.vue'
   </div>
 </template>
 
-<style></style>
+<style>
+.Cart-Box {
+  text-align: center;
+  height: auto;
+  position: absolute;
+  margin-top: 200px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.Cart-Template {
+  border: black solid 3px;
+  margin: 20px;
+  border-radius: 10px;
+  width: 30vw;
+  background: black;
+  justify-content: center;
+  color: pink;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex-wrap: 200px;
+}
+</style>
