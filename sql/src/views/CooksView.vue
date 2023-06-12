@@ -1,7 +1,7 @@
 <script>
 import boxTemplate from '../components/boxTemplate.vue'
 import { createClient } from '@supabase/supabase-js'
-import cookarray from "../components/cookarray.vue"
+import CookArray from "../components/cookarray.vue"
 
 export default {
   async created() {
