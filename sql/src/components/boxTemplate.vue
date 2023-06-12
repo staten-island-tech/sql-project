@@ -46,9 +46,6 @@ export default {
 .image {
   width: 50px;
   height: 50px;
-  display: flex;
-  flex: 200px;
-  justify-content: center;
 }
 
 .Available {
@@ -61,8 +58,5 @@ export default {
   display: flex;
   justify-content: center;
   text-align: center;
-}
-
-.cart-button {
 }
 </style>

@@ -37,6 +37,7 @@ export default {
     <boxTemplate
       v-for="item in housekeeper"
       :key="item.id"
+      :name="item.name"
       :img="item.img"
       :location="item.location"
       :price="item.price"

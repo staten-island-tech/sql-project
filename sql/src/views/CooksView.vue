@@ -57,12 +57,19 @@ export default {
 
 <style>
 .Cook-Box {
+  text-align: center;
+  height: auto;
+  position: absolute;
+  margin-top: 200px;
 }
 .Cook-Template {
   border: black solid 3px;
   margin: 20px;
-  border-radius: 5%;
+  border-radius: 10px;
   width: 40vw;
+  background: black;
+  justify-content: center;
+  color: pink;
 }
 
 .image {

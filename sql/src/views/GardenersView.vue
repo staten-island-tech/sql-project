@@ -77,7 +77,7 @@ export default {
   font-size: 3rem;
   font-weight: bold;
 }
-.image {
+.img {
   width: 25vw;
   height: 40vh;
   justify-content: center;
