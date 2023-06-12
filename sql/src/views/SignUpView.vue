@@ -44,7 +44,7 @@ export default {
               if (error) {
                 console.error(error)
               } else {
-                console.log(user_email, user_password)
+                console.log(user.id)
                 await supabase
                   .from('user_data')
                   .insert([{ email: user_email, password: user_password }])

@@ -1,5 +1,25 @@
-<script setup lang="ts">
+<script>
+/* import router from './router'
+import { authStore } from './stores/auth' */
 import { RouterLink, RouterView } from 'vue-router'
+
+/* export default {
+  methods: {
+    logOut: function () {
+      authStore.clearUser()
+      router.push('loginView')
+      this.loggedin = false
+    },
+    login: function () {
+      this.loggedin = true
+    }
+  },
+  data() {
+    return {
+      loggedin: false
+    }
+  }
+} */
 </script>
 
 <template>
