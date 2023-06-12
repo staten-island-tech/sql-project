@@ -1,8 +1,7 @@
 <script>
-import { reactive } from 'vue'
-export const templateItems = reactive([])
+import cart from '../components/boxTemplate.vue'
 export default {
-  name: 'boxTemplate',
+  name: 'cartTemplate',
   props: {
     name: String,
     img: String,
@@ -10,16 +9,16 @@ export default {
     price: Number,
     available: String,
     description: String,
-    buttonLabel: String
+    buttonlabel: String
   },
   methods: {
-    addtocart(object) {
-      cart.push(object)
+    removefromcart(object) {
+      let objects = cart.find((object) => object.name === object.name)
+      cart.splice(objects, 1)
       console.log(cart)
     }
   }
 }
-export const cart = reactive([])
 </script>
 
 <template>
@@ -33,7 +32,7 @@ export const cart = reactive([])
     <button
       class="cart-button"
       @click="
-        addtocart({
+        removefromcart({
           name: name,
           img: img,
           price: price,
@@ -41,26 +40,7 @@ export const cart = reactive([])
         })
       "
     >
-      {{ buttonLabel }}
+      {{ buttonlabel }}
     </button>
   </div>
 </template>
-
-<style>
-.image {
-  width: 50px;
-  height: 50px;
-}
-
-.Available {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-}
-
-.description {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-}
-</style>

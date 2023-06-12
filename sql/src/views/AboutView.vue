@@ -24,4 +24,9 @@
   </div>
 </template>
 
-<style></style>
+<style>
+.about {
+  color: white;
+  margin: 20px;
+}
+</style>

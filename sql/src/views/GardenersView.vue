@@ -46,6 +46,7 @@ export default {
 <template>
   <div class="Gardener-Box">
     <boxTemplate
+      class="Gardener-Template"
       v-for="item in gardener"
       :key="item.id"
       :name="item.name"
@@ -61,17 +62,28 @@ export default {
 
 <style>
 .Gardener-Box {
-  border: 4px solid black;
-  border-radius: 10%;
-  width: 30vw;
-  height: 90vh;
-  margin: 20px auto;
+  text-align: center;
+  height: auto;
+  position: absolute;
+  margin-top: 200px;
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
 }
-
+.Gardener-Template {
+  border: black solid 3px;
+  margin: 20px;
+  border-radius: 10px;
+  width: 30vw;
+  background: black;
+  justify-content: center;
+  color: pink;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex-wrap: 200px;
+}
 .name {
   text-align: center;
   font-size: 3rem;

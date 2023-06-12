@@ -61,23 +61,32 @@ export default {
   height: auto;
   position: absolute;
   margin-top: 200px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .Cook-Template {
   border: black solid 3px;
   margin: 20px;
   border-radius: 10px;
-  width: 40vw;
+  width: 30vw;
   background: black;
   justify-content: center;
   color: pink;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex-wrap: 200px;
 }
 
-.image {
-  width: 50px;
-  height: 50px;
+.img {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex: 200px;
   justify-content: center;
+  border: white solid 3px;
 }
 
 .Available {
