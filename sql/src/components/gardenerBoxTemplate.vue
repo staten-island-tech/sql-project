@@ -8,9 +8,9 @@ export default {
   props: {
     name: String,
     img: String,
-    Location: String,
+    location: String,
     price: Number,
-    Available: String,
+    available: String,
     description: String,
     buttonLabel: String
   },
@@ -46,9 +46,9 @@ export default {
   <div class="box">
     <h2 class="name">{{ name }}</h2>
     <img class="image" :src="img" :alt="img" />
-    <h3 class="Location">Location: {{ Location }}</h3>
+    <h3 class="location">Location: {{ location }}</h3>
     <h3 class="price">Price ($ per hour): ${{ price }}</h3>
-    <h3 class="Available">Available: {{ Available }}</h3>
+    <h3 class="available">Available: {{ available }}</h3>
     <h3 class="description">Description: {{ description }}</h3>
     <button
       @click="

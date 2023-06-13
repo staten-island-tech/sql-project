@@ -37,7 +37,7 @@ export default {
 
 <template>
   <div>
-    <router-view/>
+    <router-view />
   </div>
   <div class="Cook-Box">
     <boxTemplate
@@ -78,29 +78,5 @@ export default {
   align-items: center;
   text-align: center;
   flex-wrap: 200px;
-}
-
-.img {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex: 200px;
-  justify-content: center;
-  border: white solid 3px;
-}
-
-.Available {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-}
-
-.description {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-}
-
-.cart-button {
 }
 </style>

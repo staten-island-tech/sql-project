@@ -48,8 +48,10 @@ export const cart = reactive([])
 
 <style>
 .image {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
+  border: pink solid 2px;
+  border-radius: 100%;
 }
 
 .Available {

@@ -84,23 +84,4 @@ export default {
   text-align: center;
   flex-wrap: 200px;
 }
-.name {
-  text-align: center;
-  font-size: 3rem;
-  font-weight: bold;
-}
-.img {
-  width: 25vw;
-  height: 40vh;
-  justify-content: center;
-  margin: 10px auto;
-  text-align: center;
-}
-.price {
-  text-align: center;
-}
-
-.Location {
-  text-align: center;
-}
 </style>
